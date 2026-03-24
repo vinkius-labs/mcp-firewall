@@ -1,0 +1,72 @@
+{
+  "name": "@mcp-firewall/enforce",
+  "version": "1.0.0",
+  "description": "Active policy enforcement proxy for MCP servers. Redacts PII, enforces payload limits, filters fields, controls tool access, and generates compliance audit logs — powered by vurb.ts.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcp-firewall": "./dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinkius-labs/mcp-firewall.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vinkius-labs/mcp-firewall/issues"
+  },
+  "homepage": "https://vurb.vinkius.com/",
+  "author": "Renato Marinho",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "firewall",
+    "proxy",
+    "pii",
+    "dlp",
+    "redaction",
+    "compliance",
+    "audit",
+    "security",
+    "ai",
+    "llm",
+    "vurb"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@toon-format/toon": "^2.1.0",
+    "@vurb/core": "^3.8.0",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
+  }
+}
